@@ -1,38 +1,6 @@
 # Answer 1 -
 
-def construct_output(input_dict, prefix=[]):
-    output = {}
-    for key, value in input_dict.items():
-        if isinstance(value, dict):
-            sub_output = construct_output(value, prefix + [key])
-            for k, v in sub_output.items():
-                output[k] = prefix + [key] + v
-        else:
-            output[key] = prefix + [key]
-    return output
 
-input_dict = {
-    "hey": {
-        "this": {
-            "is": {
-                "ass": {
-                    "ess": {
-                        "ment": {
-                            "of": {
-                                "ine": {
-                                    "uron": "you are finally here !!!"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-output = construct_output(input_dict)
-print(output)
 
 
 
